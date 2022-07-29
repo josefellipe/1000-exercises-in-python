@@ -1,13 +1,13 @@
-inPalindrome = input("Put a possible palindrome:\n")
+inPalindrome = input("Write a possible palindrome:\n")
 
 
-def text_for_array(text):
+def text_to_array(text):
     array_text = list(text)
     array_text = remove_space(array_text)
     return array_text
 
 
-def text_for_array_reverse(text):
+def text_to_array_reverse(text):
     array_text_reverse = list(reversed(text))
     array_text_reverse = remove_space(array_text_reverse)
     return array_text_reverse
@@ -18,7 +18,7 @@ def remove_space(array_space):
     return array_space
 
 
-def comparing_arrays(array1, array2):
+def compare_arrays(array1, array2):
     if array1 == array2:
         result = True
     else:
@@ -26,20 +26,18 @@ def comparing_arrays(array1, array2):
     return result
 
 
-def is_palindrome(yes_or_not):
-    if yes_or_not:
+def is_palindrome(yes):
+    if yes:
         result = "is"
     else:
         result = "isn't"
     return result
 
 
-array = text_for_array(inPalindrome)
+array = text_to_array(inPalindrome)
 
-array_reverse = text_for_array_reverse(inPalindrome)
+array_reverse = text_to_array_reverse(inPalindrome)
 
-same = comparing_arrays(array, array_reverse)
+same = compare_arrays(array, array_reverse)
 
-confirmation = is_palindrome(same)
-
-print(f'\n{inPalindrome} {confirmation} a Palindrome!')
+print(f'\n{inPalindrome} {is_palindrome(same)} a Palindrome!')
